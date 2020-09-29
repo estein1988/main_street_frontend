@@ -3,57 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="new_business_form.css"/>	
     <script defer src="new_business_form.js"></script>
     <title>Enter a New Business</title>
 </head>
 <body>
     
-
     <form id="business-form">
-        
-        <label>First Name</label>
-        <input name="first_name"/>
-        
-        <label>Last Name</label>
-        <input name="last_name">
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+        </div>
 
-        <label>Username</label>
-        <input name="username">
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+        </div>
 
-        <label>Password</label>
-        <input type= "password" name="password">
+        <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Last Name">
+        </div>
 
-        <label>Business Name</label>
-        <input name="business_name">
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        </div>
 
-        <label>Business Street</label>
-        <input name="business_street">
+        <div class="form-group">
+            <label for="business_name">Business Name</label>
+            <input type="text" class="form-control" id="business_name" name="business_name" placeholder="Business Name">
+        </div>
 
-        <label>Business City</label>
-        <input name="business_city">
+        <div class="form-group">
+            <label for="business_street">Business Street</label>
+            <input type="text" class="form-control" id="business_street" name="business_street" placeholder="Business Street">
+        </div>
 
-        <label>Business City</label>
-        <input name="business_state">
+        <div class="form-group">
+            <label for="business_city">Business Street</label>
+            <input type="text" class="form-control" id="business_city" name="business_city" placeholder="Business City">
+        </div>
 
-        <label>Business Zip</label>
-        <input name="business_zip">
+        <div class="form-group">
+            <label for="business_state">Business State</label>
+            <input type="text" class="form-control" id="business_state" name="business_state" placeholder="Business State">
+        </div>
 
-        <label>Business Phone</label>
-        <input name="business_phone">
+        <div class="form-group">
+            <label for="business_zip">Business Zip</label>
+            <input type="text" class="form-control" id="business_zip" name="business_zip" placeholder="Business Zip">
+        </div>
 
-        <label>Email</label>
-        <input name="email">
+        <div class="form-group">
+            <label for="business_phone">Business Phone</label>
+            <input type="text" class="form-control" id="business_phone" name="business_phone" placeholder="Business Phone">
+        </div>
 
-        <label>Website</label>
-        <input name="website">
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
 
-        <label>Industry</label>
-        <input name="industry">
+        <div class="form-group">
+            <label for="website">Website</label>
+            <input type="text" class="form-control" id="website" name="website" placeholder="Website">
+        </div>
 
-        <input type="submit">
+        <div class="form-group">
+            <label for="industry">Industry</label>
+            <input type="text" class="form-control" id="industry" name="industry" placeholder="Industy">
+        </div>
 
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
 </html>

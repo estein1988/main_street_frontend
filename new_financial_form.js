@@ -7,7 +7,6 @@ form.addEventListener('submit', submitForm)
 
 function submitForm(event){
     event.preventDefault()
-
     const formData = new FormData(event.target)
     const year = formData.get('year')
     const sales_revenue = parseInt(formData.get('sales_revenue'))
@@ -42,6 +41,22 @@ function submitForm(event){
         },
         body: JSON.stringify( {financial} )
     })
+    .then(response => response.json())
+    .then(appendMessage)
+    
+    function appendMessage(messages) {
+        if (Array.isArray(messages)) {
+            messages.forEach(message => {
+            const errorMessage = document.createElement('p')
+            errorMessage.textContent = message
+            document.body.appendChild(errorMessage)
+            })
+        } else {   
+            const successMessage = document.createElement('h2')
+            successMessage.textContent = "Financial Statement Successfully Entered"
+            document.body.append(successMessage)     
+        }
+    }
 }
 
 fetch(businessesURL)
