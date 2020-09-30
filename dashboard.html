@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="title icon" href="images/title-img.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -12,7 +11,6 @@
     <script defer src="dashboard.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <title>Main Street Valuations</title>
-
 </head>
 <body>
     <!-- navbar -->
@@ -28,7 +26,7 @@
                 <a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">Main Street<br>Valuations, LP</a>
                 <div class="bottom-border pb-3">
                     <img src="admin.jpeg" width="50" class="rounded-circle mr-3">
-                    <a href="#" class="text-white">Helen Smith</a>
+                    <a href="#" class="text-white" id="ownerName"></a>
                 </div>
                 <ul class="navbar-nav flex-column mt-4">
                     <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
@@ -210,53 +208,36 @@
                             <table class="table table-striped bg-light text-center">
                             <thead>
                                 <tr class="text-muted">
-                                <th>Category</th>
-                                <th>12/31/2019</th>
-                                <th>12/31/2018</th>
-                                <th>12/31/2017</th>
-                                <!-- <th>Date</th> -->
-                                <!-- <th>Contact</th> -->
+                                    <th>Category</th>
+                                    <th>FY 2019</th>
+                                    <th>FY 2018</th>
+                                    <th>FY 2017</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                <th>Revenue</th>
-                                <td id="revenue2019income"></td>
-                                <td id="revenue2018income"></td>
-                                <td id="revenue2017income"></td>
-                                <!-- <td>25/05/2018</td> -->
-                                <!-- <td><button type="button" class="btn btn-info btn-sm">Update</button></td> -->
+                                    <th>Total Revenue</th>
+                                    <td id="revenue2019income"></td>
+                                    <td id="revenue2018income"></td>
+                                    <td id="revenue2017income"></td>
+                                    </tr>
+                                <tr>
+                                    <th>Op Ex</th>
+                                    <td id="expense2019income"></td>
+                                    <td id="expense2018income"></td>
+                                    <td id="expense2017income"></td>
                                 </tr>
                                 <tr>
-                                <th>Expenses</th>
-                                <td id="expense2019income"></td>
-                                <td id="expense2018income"></td>
-                                <td id="expense2017income"></td>
-                                <!-- <td>25/05/2018</td> -->
-                                <!-- <td><button type="button" class="btn btn-info btn-sm">Message</button></td> -->
+                                    <th>EBITA</th>
+                                    <td id="ebita2019income"></td>
+                                    <td id="ebita2018income"></td>
+                                    <td id="ebita2017income"></td>
                                 </tr>
                                 <tr>
-                                <th>EBITA</th>
-                                <td id="ebita2019income"></td>
-                                <td id="ebita2018income"></td>
-                                <td id="ebita2017income"></td>
-                                <!-- <td>25/05/2018</td> -->
-                                <!-- <td><button type="button" class="btn btn-info btn-sm">Message</button></td> -->
-                                </tr>
-                                <tr>
-                                <th>Profit/Loss</th>
-                                <td id="profit2019income"></td>
-                                <td id="profit2018income"></td>
-                                <td id="profit2017income"></td>
-                                <!-- <td>25/05/2018</td> -->
-                                <!-- <td><button type="button" class="btn btn-info btn-sm">Message</button></td> -->
-                                </tr>
-                                <tr>
-                                <!-- <th>5</th>
-                                <td>Bob</td>
-                                <td>$2000</td> -->
-                                <!-- <td>25/05/2018</td> -->
-                                <!-- <td><button type="button" class="btn btn-info btn-sm">Message</button></td> -->
+                                    <th>Profit/Loss</th>
+                                    <td id="profit2019income"></td>
+                                    <td id="profit2018income"></td>
+                                    <td id="profit2017income"></td>
                                 </tr>
                             </tbody>
                             </table>
@@ -286,19 +267,16 @@
                                 </div>
                             </div>
                         <div class="card-footer text-secondary">
-                            <!-- Trigger/Open The Modal -->
-                                <button id="myBtn">Explain This</button>
-                                <!-- The Modal -->
-                                <div id="myModal" class="modal">
-                                    <!-- Modal content -->
+                            <button id="valuationBtn">Explain This</button>
+                                <div id="valuationModal" class="modal">
                                     <div class="modal-content">
-                                    <span class="close">&times;</span>
-                                    <p>We value your company at 3x of your last year's EBITA. But you are your company's most valuable asset, so keep working hard!</p>
+                                        <span class="close">&times;</span>
+                                        <p id="valuationText"></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                     <div class="col-xl-3 col-sm-6 p-2">
                         <div class="card card-common">
                             <div class="card-body">
@@ -306,16 +284,16 @@
                                     <i class="fas fa-money-bill-alt fa-3x text-success"></i>
                                     <div class="text-right text-secondary">
                                         <h5>Sell My Business</h5>
-                                        <h3 id="sellBusiness"></h3>
+                                        <h3></h3>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer text-secondary">
-                                    <button id="myBtn">Sell! Sell! Sell!</button>
-                                        <div id="myModal" class="modal">
+                                    <button id="sellBtn">Sell! Sell! Sell!</button>
+                                        <div id="sellModal" class="modal">
                                             <div class="modal-content">
                                                 <span class="close">&times;</span>
-                                                <p>It's a buyer's market right now. A Main Street agent will contact you shortly.</p>
+                                                <p id="sellBusiness"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -328,16 +306,16 @@
                                     <i class="fas fa-users fa-3x text-info"></i>
                                 <div class="text-right text-secondary">
                                     <h5 >Hire Help</h5>
-                                    <h3 id="hireHelp"></h3>
+                                    <h3></h3>
                                 </div>
                             </div>
                         </div>
                             <div class="card-footer text-secondary">
-                                <button id="myBtn">Explain This</button>
-                                    <div id="myModal" class="modal">
+                                <button id="hireBtn">Help!</button>
+                                    <div id="hireModal" class="modal">
                                         <div class="modal-content">
                                             <span class="close">&times;</span>
-                                            <p>https://www.ziprecruiter.com</p>
+                                            <p id="hireHelp"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -349,17 +327,17 @@
                                 <div class="d-flex justify-content-between">
                                     <i class="fas fa-chart-line fa-3x text-danger"></i>
                                 <div class="text-right text-secondary">
-                                    <h5 id="profitHeader">XXXXXXXXXX</h5>
-                                    <h3 id="profit2019">45,000</h3>
+                                    <h5>Highest Expense</h5>
+                                    <h3 id="highestExpense"></h3>
                                 </div>
                             </div>
                         </div>
                             <div class="card-footer text-secondary">
-                            <button id="myBtn">Explain This</button>
-                                <div id="myModal" class="modal">
+                            <button id="highestBtn">Explain This</button>
+                                <div id="highestModal" class="modal">
                                     <div class="modal-content">
                                         <span class="close">&times;</span>
-                                        <p>We value your business at x given y</p>
+                                        <p id="highestText"></p>
                                     </div>
                                 </div>
                             </div>
