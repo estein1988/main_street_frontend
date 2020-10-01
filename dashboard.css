@@ -110,6 +110,19 @@ body {
 }
   /* end of task list */
 
+.topModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: -50px;
+    top: 50px;
+    width: 175%;
+    height: 175%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+}
+
 .modal {
     display: none;
     position: fixed;

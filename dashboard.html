@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link rel="title icon" href="images/title-img.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
     <link rel="stylesheet" href="dashboard.css"/>	
     <script defer src="dashboard.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <title>Main Street Valuations</title>
+    
+    <title>Dashboard</title>
+
 </head>
+
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-light">
@@ -109,11 +114,16 @@
                                     </div>
                                 </div>
                             <div class="card-footer text-secondary">
-                                <i class="fas fa-sync mr-3"></i>
-                                <span>Updated Now</span>
+                                <button id="revenueBtn">Explain This</button>
+                                    <div id="revenueModal" class="topModal">
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <p id="revenueExplanation">Your revenue is all money taken in from last year (sales + service).</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
                         <div class="col-xl-3 col-sm-6 p-2">
                             <div class="card card-common">
                                 <div class="card-body">
@@ -126,12 +136,17 @@
                                     </div>
                                 </div>
                                 <div class="card-footer text-secondary">
-                                    <i class="fas fa-sync mr-3"></i>
-                                    <span>Updated Now</span>
+                                    <button id="expensesBtn">Explain This</button>
+                                        <div id="expensesModal" class="topModal">
+                                            <div class="modal-content">
+                                                <span class="close">&times;</span>
+                                                <p id="expensesExplanation">All expenses</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    <div class="col-xl-3 col-sm-6 p-2">
+                        <div class="col-xl-3 col-sm-6 p-2">
                         <div class="card card-common">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
@@ -143,8 +158,13 @@
                             </div>
                         </div>
                             <div class="card-footer text-secondary">
-                                <i class="fas fa-sync mr-3"></i>
-                                <span>Updated Now</span>
+                                <button id="ebitaBtn">Explain This</button>
+                                <div id="ebitaModal" class="topModal">
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <p id="ebitaExplanation">Earnings Minus Interest Taxes Depreciation Ammoritzation. You have less control over these expenses. If cash flow is tight, Main Street recommends you look at your other expenses before these line items.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -160,8 +180,13 @@
                                 </div>
                             </div>
                                 <div class="card-footer text-secondary">
-                                    <i class="fas fa-sync mr-3"></i>
-                                    <span>Updated Now</span>
+                                    <button id="profitBtn">Explain This</button>
+                                    <div id="profitModal" class="topModal">
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <p id="profitExplanation">Total take home pay for owner.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

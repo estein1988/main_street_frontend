@@ -30,4 +30,11 @@ function submitForm(event){
         },
         body: JSON.stringify( {business} )
     })
+    .then(response => response.json())
+    .then(appendMessage)
+
+    function appendMessage(event) {
+        const successMessage = document.querySelector('#success-message')
+        successMessage.textContent = 'Account Created Succesfully!'
+    }
 }

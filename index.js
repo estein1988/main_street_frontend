@@ -2,9 +2,11 @@ const baseURL = 'http://localhost:3000/'
 const businessesURL = 'http://localhost:3000/businesses'
 const loginURL = 'http://localhost:3000/login'
 const loginForm = document.querySelector('.login-form')
-const getUsers = document.querySelector('.get-users')
+const newUser = document.querySelector('#new-user')
+const getUsers = document.querySelector('#get-users')
 
 loginForm.addEventListener('submit', loginUser)
+newUser.addEventListener('click', createNewUser)
 getUsers.addEventListener('click', retrieveUsers)
 
 
@@ -26,6 +28,7 @@ function loginUser(event){
     })
 }
 
+
 function retrieveUsers(event) {
     fetch(businessesURL, {
     headers: {
@@ -37,9 +40,12 @@ function retrieveUsers(event) {
         if(response.ok) {
             window.location.href = '/profile.html'
         } else {
-            const errorMessage = document.createElement('p')
-            errorMessage.textContent = "Please login"
-            document.body.append(errorMessage)
+            const errorMessage = document.querySelector('#error-message')
+            errorMessage.textContent = `Invalid credentials`
         }
     })
+}
+
+function createNewUser(event){
+    window.location.href = '/new_business_form.html'
 }

@@ -3,10 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <link rel="stylesheet" href="profile.css"/>	
     <script defer src="profile.js"></script>
-    <title>Profile</title>
+    <title>Profile Page</title>
 </head>
 <body>
-    <h1>Profile Page</h1>
+
+    <h1 id="bannerText">Profile Page</h1>
+
+    <form id="financials-form">
+        <div class="form-group">
+            <label for="year">Year Ending</label>
+            <input type="text" class="form-control" id="year" name="year" placeholder="Year Ending">
+        </div>
+
+        <div class="form-group">
+            <label for="sales_revenue">Sales Revenue</label>
+            <input type="text" class="form-control" id="sales_revenue" name="sales_revenue" placeholder="Sales Revenue">
+        </div>
+
+        <div class="form-group">
+            <label for="service_revenue">Service Revenue</label>
+            <input type="text" class="form-control" id="service_revenue" name="service_revenue" placeholder="Service Revenue">
+        </div>
+
+        <div class="form-group">
+            <label for="advertising">Advertising</label>
+            <input type="text" class="form-control" id="advertising" name="advertising" placeholder="Advertising">
+        </div>
+
+        <div class="form-group">
+            <label for="cogs">Cost of Goods Sold</label>
+            <input type="text" class="form-control" id="cogs" name="cogs" placeholder="Cost of Goods Sold">
+        </div>
+
+        <div class="form-group">
+            <label for="employee_benefits">Employee Benefits</label>
+            <input type="text" class="form-control" id="employee_benefits" name="employee_benefits" placeholder="Employee Benefits">
+        </div>
+
+        <div class="form-group">
+            <label for="equipment">Equipment</label>
+            <input type="text" class="form-control" id="equipment" name="equipment" placeholder="Equipment">
+        </div>
+
+        <div class="form-group">
+            <label for="insurance">Insurance</label>
+            <input type="text" class="form-control" id="insurance" name="insurance" placeholder="Insurance">
+        </div>
+
+        <div class="form-group">
+            <label for="maintenance">Maintenance</label>
+            <input type="text" class="form-control" id="maintenance" name="maintenance" placeholder="Maintenance">
+        </div>
+
+        <div class="form-group">
+            <label for="office_supplies">Office Supplies</label>
+            <input type="text" class="form-control" id="office_supplies" name="office_supplies" placeholder="Office Supplies">
+        </div>
+
+        <div class="form-group">
+            <label for="rent">Rent</label>
+            <input type="text" class="form-control" id="rent" name="rent" placeholder="rent">
+        </div>
+
+        <div class="form-group">
+            <label for="r_and_d">Research & Development</label>
+            <input type="text" class="form-control" id="r_and_d" name="r_and_d" placeholder="Research & Development">
+        </div>
+
+        <div class="form-group">
+            <label for="salaries">Salaries</label>
+            <input type="text" class="form-control" id="salaries" name="salaries" placeholder="Salaries">
+        </div>
+
+        <div class="form-group">
+            <label for="software">Software</label>
+            <input type="text" class="form-control" id="software" name="software" placeholder="Software">
+        </div>
+
+        <div class="form-group">
+            <label for="travel">Travel</label>
+            <input type="text" class="form-control" id="travel" name="travel" placeholder="Travel">
+        </div>
+
+        <div class="form-group">
+            <label for="utilities">Utilities</label>
+            <input type="text" class="form-control" id="utilities" name="utilities" placeholder="Utilities">
+        </div>
+
+        <div class="form-group">
+            <label for="Website">Website</label>
+            <input type="text" class="form-control" id="website" name="website" placeholder="website">
+        </div>
+
+        <div class="form-group">
+            <label for="other_expense">Other Expense</label>
+            <input type="text" class="form-control" id="other_expense" name="other_expense" placeholder="Other Expense">
+        </div>
+
+        <div class="form-group">
+            <label for="interest">Interest</label>
+            <input type="text" class="form-control" id="interest" name="interest" placeholder="Interest">
+        </div>
+
+        <div class="form-group">
+            <label for="taxes">Taxes</label>
+            <input type="text" class="form-control" id="taxes" name="taxes" placeholder="Taxes">
+        </div>
+
+        <div class="form-group">
+            <label for="ammoritization">Ammoritization</label>
+            <input type="text" class="form-control" id="ammoritization" name="ammoritization" placeholder="Ammoritization">
+        </div>
+
+        <div class="form-group">
+            <label for="depreciation">Depreciation</label>
+            <input type="text" class="form-control" id="depreciation" name="depreciation" placeholder="depreciation">
+        </div>
+
+        <div class="form-group">
+            <label for="business_id">Business Id</label>
+            <select class="form-control" id="business_id" name="business_id">
+                <option id="business_id"></option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
 </body>
 </html>

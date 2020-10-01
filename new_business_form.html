@@ -9,77 +9,94 @@
     <title>Enter a New Business</title>
 </head>
 <body>
-    
-    <form id="business-form">
-        <div class="form-group">
-            <label for="first_name">First Name</label>
-            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+
+<!-- Default form register -->
+<form class="text-center border border-light p-5" id="business-form" action="#!">
+    <div class="col-6">
+        <p class="h4 mb-4">Thanks for joining us! Please enter your basic business information</p>
+    </div>
+
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- First name -->
+            <input type="text" id="first_name" name="first_name" class="form-control" placeholder="First name">
         </div>
-
-        <div class="form-group">
-            <label for="last_name">Last Name</label>
-            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+        <div class="col-3">
+            <!-- Last name -->
+            <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Last name">
         </div>
-
-        <div class="form-group">
-            <label for="username">User Name</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Last Name">
+    </div>
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Username -->
+            <input type="text" id="username" name="username" class="form-control" placeholder="User name">
         </div>
-
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        <div class="col-3">
+            <!-- Password -->
+            <input type="text" id="password" name="password" class="form-control" placeholder="Password">
         </div>
-
-        <div class="form-group">
-            <label for="business_name">Business Name</label>
-            <input type="text" class="form-control" id="business_name" name="business_name" placeholder="Business Name">
+    </div>
+    <div class="form-row mb-4">
+        <div class="col-6">
+            <!-- Username -->
+            <input type="text" id="business_name" name="business_name" class="form-control" placeholder="Business Name">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="business_street">Business Street</label>
-            <input type="text" class="form-control" id="business_street" name="business_street" placeholder="Business Street">
+
+    <div class="form-row mb-4">
+        <div class="col-2">
+            <!-- Business City -->
+            <input type="text" id="business_street" name="business_street" class="form-control" placeholder="Street">
         </div>
-
-        <div class="form-group">
-            <label for="business_city">Business Street</label>
-            <input type="text" class="form-control" id="business_city" name="business_city" placeholder="Business City">
+        <div class="col-2">
+            <!-- Business City -->
+            <input type="text" id="business_city" name="business_city" class="form-control" placeholder="City">
         </div>
-
-        <div class="form-group">
-            <label for="business_state">Business State</label>
-            <input type="text" class="form-control" id="business_state" name="business_state" placeholder="Business State">
+        <div class="col-1">
+            <!-- Business State -->
+            <input type="text" id="business_state" name="business_state" class="form-control" placeholder="State">
         </div>
-
-        <div class="form-group">
-            <label for="business_zip">Business Zip</label>
-            <input type="text" class="form-control" id="business_zip" name="business_zip" placeholder="Business Zip">
+        <div class="col-1">
+            <!-- Business Zip -->
+            <input type="text" id="business_zip" name="business_zip" class="form-control" placeholder="Zip">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="business_phone">Business Phone</label>
-            <input type="text" class="form-control" id="business_phone" name="business_phone" placeholder="Business Phone">
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Business Phone -->
+            <input type="text" id="businss_phone" name="business_phone" class="form-control" placeholder="Business Phone">
         </div>
-
-        <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <div class="col-3">
+            <!-- Business Email -->
+            <input type="text" id="email" name="email" class="form-control" placeholder="Email">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="website">Website</label>
-            <input type="text" class="form-control" id="website" name="website" placeholder="Website">
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Website -->
+            <input type="text" id="website" name="website" class="form-control" placeholder="Website">
         </div>
-
-        <div class="form-group">
-            <label for="industry">Industry</label>
-            <input type="text" class="form-control" id="industry" name="industry" placeholder="Industy">
+        <div class="col-3">
+            <!-- Industry -->
+            <input type="text" id="industry" name="industry" class="form-control" placeholder="Industry">
         </div>
+    </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
+    <!-- Sign up button -->
+    <div class="col-6">
+        <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+    </div>
+    <!-- Terms of service -->
+    <div class="col-6"><p>By clicking
+        <em>Sign up</em> you agree to our
+        <a href="" target="_blank">terms of service</a>
+    </div>
+    <p class="col-6" id="success-message"></p>
+</form>
+<!-- Default form register -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>

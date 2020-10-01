@@ -1,5 +1,3 @@
-// const searchParams = new URLSearchParams(window.location.search)
-// const businessId = searchParams.get('business.id')
 const ownerName = document.querySelector('#ownerName')
 const businessName = document.querySelector('#businessName')
 const expenses2019card = document.querySelector('#expense2019')
@@ -19,12 +17,6 @@ fetch(profileURL, {headers})
     .then(handleResponse)
     .then(business => {
 
-// fetch(`http://localhost:3000/businesses/${businessId}`)
-//     .then(response=>response.json())
-//     .then(handleResponse)
-//     .then(renderCards)
-
-// function renderCards(business) {
     ownerName.textContent = `${business.first_name} ${business.last_name}`
     businessName.textContent = business.business_name
 
@@ -46,7 +38,7 @@ fetch(profileURL, {headers})
             profit2019card.textContent = `$${profit2019sum}`
             businessValuation.textContent = `$${valuation}`
             valuationText.textContent = `We value your business at $${valuation}, 3x your 2019 EBITA. But remember, ${business.first_name}, you are your company's greatest asset so keep working hard!`
-            sellBusiness.textContent = `Main Street is prepared to solicit ${business.name} an offer of: $${offer}, 5x your last year's EBITA. This offer is non-binding. A Main Street agent will contact you shortly at ${business.business_phone}.`
+            sellBusiness.textContent = `Main Street is prepared to solicit ${business.business_name} an offer of: $${offer}, 5x your last year's EBITA. This offer is non-binding. A Main Street agent will contact you shortly at ${business.business_phone}.`
             hireHelp.innerHTML = `<a href='https://www.ziprecruiter.com'>ZipRecruiter</a>`
             highestExpense.textContent = `$${max}`
             highestText.textContent = `placeholder`
@@ -57,9 +49,6 @@ fetch(profileURL, {headers})
 fetch(profileURL, {headers})
     .then(handleResponse)
     .then(drawChart)
-// fetch(`http://localhost:3000/businesses/${businessId}`)
-//     .then(handleResponse)
-//     .then(drawChart)
 
 function drawChart(business){
     google.charts.load('current', {'packages':['bar']});
@@ -89,16 +78,13 @@ function drawChart(business){
             [year1,    revenueYear1,   expensesYear1,   profitYear1],  
             [year2,    revenueYear2,   expensesYear2,   profitYear2],
             [year3,    revenueYear3,   expensesYear3,   profitYear3]
-
         ]);
-
         var options = {
             chart: {
             title: 'Last Three Years of Company Performance',
             subtitle: `Sales, Expenses, and Profit: ${year3}-${year1}`,
             }
         };
-
             var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
             chart.draw(data, google.charts.Bar.convertOptions(options));
         }
@@ -225,6 +211,18 @@ function renderIncomeStatement(business) {
     })
 }
 
+const revenueModal = document.querySelector("#revenueModal");
+const revenueBtn = document.querySelector("#revenueBtn");
+
+const expensesModal = document.querySelector("#expensesModal");
+const expensesBtn = document.querySelector("#expensesBtn");
+
+const ebitaBtn = document.querySelector("#ebitaBtn");
+const ebitaModal = document.querySelector("#ebitaModal");
+
+const profitBtn = document.querySelector("#profitBtn");
+const profitModal = document.querySelector("#profitModal");
+
 const valuationModal = document.querySelector("#valuationModal");
 const valuationBtn = document.querySelector("#valuationBtn");
 
@@ -238,6 +236,22 @@ const highestBtn = document.querySelector("#highestBtn");
 const highestModal = document.querySelector("#highestModal");
 
 const span = document.getElementsByClassName("close")[0];
+
+revenueBtn.onclick = function() {
+    revenueModal.style.display = "block";
+}
+
+expensesBtn.onclick = function() {
+    expensesModal.style.display = "block";
+}
+
+ebitaBtn.onclick = function() {
+    ebitaModal.style.display = "block";
+}
+
+profitBtn.onclick = function() {
+    profitModal.style.display = "block";
+}
 
 valuationBtn.onclick = function() {
     valuationModal.style.display = "block";
@@ -256,6 +270,13 @@ highestBtn.onclick = function() {
 }
 
 span.onclick = function() {
+    revenueModal.style.display = "none";
+    expensesModal.style.display = "none";
+    ebitaModal.style.display = "none";
+    profitModal.style.display = "none";
+}
+
+span.onclick = function() {
     valuationModal.style.display = "none";
     sellModal.style.display = "none";
     hireModal.style.display = "none";
@@ -263,6 +284,18 @@ span.onclick = function() {
 }
 
 window.onclick = function(event) {
+    if (event.target == revenueModal) {
+        revenueModal.style.display = "none";
+    }
+    if (event.target == expensesModal) {
+        expensesModal.style.display = "none";
+    }
+    if (event.target == ebitaModal) {
+        ebitaModal.style.display = "none";
+    }
+    if (event.target == profitModal) {
+        profitModal.style.display = "none";
+    }
     if (event.target == valuationModal) {
         valuationModal.style.display = "none";
     }
@@ -280,3 +313,14 @@ window.onclick = function(event) {
 function handleResponse(response){
     return response.json()
 }
+
+
+// const searchParams = new URLSearchParams(window.location.search)
+// const businessId = searchParams.get('business.id')
+
+// fetch(`http://localhost:3000/businesses/${businessId}`)
+//     .then(response=>response.json())
+//     .then(handleResponse)
+//     .then(renderCards)
+
+// function renderCards(business) {
