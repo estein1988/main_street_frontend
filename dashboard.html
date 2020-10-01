@@ -45,7 +45,7 @@
             <div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
                 <div class="row align-items-center">
                     <div class="col-md-4">
-                    <h4 class="text-light text-uppercase mb-0">Business Owner Dashboard</h4>
+                    <h2 class="text-light text-uppercase mb-0" id="businessName"></h2>
                     </div>
                     <div class="col-md-5">
                     <form>
@@ -154,8 +154,8 @@
                                     <div class="d-flex justify-content-between">
                                         <i class="fas fa-chart-line fa-3x text-danger"></i>
                                     <div class="text-right text-secondary">
-                                        <h5 id="profitHeader">Net Profit</h5>
-                                        <h3 id="profit2019">45,000</h3>
+                                        <h5 id="profitHeader">2019 Net Profit</h5>
+                                        <h3 id="profit2019"></h3>
                                     </div>
                                 </div>
                             </div>
@@ -180,14 +180,14 @@
                 <div class="row pt-md-5 mt-md-3 mb-5">
                     <div class="col-xl-12 col-sm-6 p-2">
                         <div class="card card-common">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
+                            <!-- <div class="card-body"> -->
+                                <!-- <div class="d-flex justify-content-between"> -->
                                 <!-- <i class="fas fa-shopping-cart fa-3x text-warning"></i> -->
-                                    <div class="text-right text-secondary">
-                                    <div id="columnchart_material" style="width: 1200px; height: 400px;"></div>
-                                </div>
-                            </div>
-                        </div>
+                                    <!-- <div class="text-right text-secondary"> -->
+                                    <div id="columnchart_material" style="width: 1000px; height: 400px;"></div>
+                                <!-- </div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
                     </div>
                 </div>
             </div>
@@ -203,7 +203,7 @@
             <div class="row mb-5">
                 <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
                     <div class="row align-items-center">
-                        <div class="col-xl-12 col-12 mb-4 mb-xl-0">
+                        <div class="col-xl-8 col-12 mb-4 mb-xl-0">
                             <h3 class="text-muted text-center mb-3">Consolidated Income Statement</h3>
                             <table class="table table-striped bg-light text-center">
                             <thead>
@@ -217,27 +217,93 @@
                             <tbody>
                                 <tr>
                                     <th>Total Revenue</th>
-                                    <td id="revenue2019income"></td>
-                                    <td id="revenue2018income"></td>
-                                    <td id="revenue2017income"></td>
+                                    <td id="revenue2019incomeStatement"></td>
+                                    <td id="revenue2018incomeStatement"></td>
+                                    <td id="revenue2017incomeStatement"></td>
                                     </tr>
                                 <tr>
-                                    <th>Op Ex</th>
-                                    <td id="expense2019income"></td>
-                                    <td id="expense2018income"></td>
-                                    <td id="expense2017income"></td>
+                                    <th>COGs</th>
+                                    <td id="cogs2019incomeStatement"></td>
+                                    <td id="cogs2018incomeStatement"></td>
+                                    <td id="cogs2017incomeStatement"></td>
+                                </tr>
+                                <tr>
+                                    <th>Employee Benefits</th>
+                                    <td id="employeeBenefits2019incomeStatement"></td>
+                                    <td id="employeeBenefits2018incomeStatement"></td>
+                                    <td id="employeeBenefits2017incomeStatement"></td>
+                                </tr>
+                                <tr>
+                                    <th>Equipment</th>
+                                    <td id="equipment2019incomeStatement"></td>
+                                    <td id="equipment2018incomeStatement"></td>
+                                    <td id="equipment2017incomeStatement"></td>
+                                </tr>
+                                <tr>
+                                    <th>Insurance</th>
+                                    <td id="insurance2019incomeStatement"></td>
+                                    <td id="insurance2018incomeStatement"></td>
+                                    <td id="insurance2017incomeStatement"></td>
+                                </tr>
+                                <tr>
+                                    <th>Maintenance</th>
+                                    <td id="maintenance2019incomeStatement"></td>
+                                    <td id="maintenance2018incomeStatement"></td>
+                                    <td id="maintenance2017incomeStatement"></td>
+                                </tr>
+                                <tr>
+                                    <th>Rent</th>
+                                    <td id="rent2019incomeStatement"></td>
+                                    <td id="rent2018incomeStatement"></td>
+                                    <td id="rent2017incomeStatement"></td>
+                                </tr>
+                                <tr>
+                                    <th>Salaries</th>
+                                    <td id="salaries2019incomeStatement"></td>
+                                    <td id="salaries2018incomeStatement"></td>
+                                    <td id="salaries2017incomeStatement"></td>
+                                </tr>
+                                <tr>
+                                    <th>Remaining Expenses</th>
+                                    <td id="otherExpenses2019incomeStatement"></td>
+                                    <td id="otherExpenses2018incomeStatement"></td>
+                                    <td id="otherExpenses2017incomeStatement"></td>
                                 </tr>
                                 <tr>
                                     <th>EBITA</th>
-                                    <td id="ebita2019income"></td>
-                                    <td id="ebita2018income"></td>
-                                    <td id="ebita2017income"></td>
+                                    <td id="ebita2019incomeStatement"></td>
+                                    <td id="ebita2018incomeStatement"></td>
+                                    <td id="ebita2017incomeStatement"></td>
+                                </tr>
+                                <tr>
+                                    <th>Interest</th>
+                                    <td id="interest2019incomeStatement"></td>
+                                    <td id="interest2018incomeStatement"></td>
+                                    <td id="interest2017incomeStatement"></td>
+                                </tr>
+                                <tr>
+                                    <th>Taxes</th>
+                                    <td id="taxes2019incomeStatement"></td>
+                                    <td id="taxes2018incomeStatement"></td>
+                                    <td id="taxes2017incomeStatement"></td>
+                                </tr>
+                                <tr>
+                                    <th>Ammoritization</th>
+                                    <td id="ammoritzation2019incomeStatement"></td>
+                                    <td id="ammoritzation2018incomeStatement"></td>
+                                    <td id="ammoritzation2017incomeStatement"></td>
+                                </tr>
+                                <tr>
+                                    <th>Depreciation</th>
+                                    <td id="depreciation2019incomeStatement"></td>
+                                    <td id="depreciation2018incomeStatement"></td>
+                                    <td id="depreciation2017incomeStatement"></td>
                                 </tr>
                                 <tr>
                                     <th>Profit/Loss</th>
-                                    <td id="profit2019income"></td>
-                                    <td id="profit2018income"></td>
-                                    <td id="profit2017income"></td>
+                                    <td id="profit2019incomeStatement"></td>
+                                    <td id="profit2018incomeStatement"></td>
+                                    <td id="profit2017incomeStatement"></td>
                                 </tr>
                             </tbody>
                             </table>
