@@ -128,7 +128,7 @@ body {
     position: fixed;
     z-index: 1;
     left: -50px;
-    top: 50px;
+    top: 80px;
     width: 175%;
     height: 175%;
     overflow: auto;

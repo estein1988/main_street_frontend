@@ -38,10 +38,10 @@
                     <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-user text-light fa-lg mr-3"></i>Profile</a></li>
                     <!-- <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-envelope text-light fa-lg mr-3"></i>Inbox</a></li> -->
                     <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Sales</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-chart-line text-light fa-lg mr-3"></i>Analytics</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-chart-bar text-light fa-lg mr-3"></i>Charts</a></li>
                     <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-table text-light fa-lg mr-3"></i>Tables</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-wrench text-light fa-lg mr-3"></i>Settings</a></li>
+                    <li class="nav-item"><a href="#" id="analytics" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-chart-line text-light fa-lg mr-3"></i>Analytics</a></li>
+                    <!-- <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-wrench text-light fa-lg mr-3"></i>Settings</a></li> -->
                     <!-- <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-file-alt text-light fa-lg mr-3"></i>Documentation</a></li> -->
                 </ul>
             </div>
@@ -64,7 +64,7 @@
                     <ul class="navbar-nav">
                         <!-- <li class="nav-item icon-parent"><a href="#" class="nav-link icon-bullet"><i class="fas fa-comments text-muted fa-lg"></i></a></li>
                         <li class="nav-item icon-parent"><a href="#" class="nav-link icon-bullet"><i class="fas fa-bell text-muted fa-lg"></i></a></li> -->
-                        <li class="nav-item ml-md-auto"><a href="#" class="nav-link" data-toggle="modal" data-target="#sign-out"><i class="fas fa-sign-out-alt text-danger fa-lg"></i></a></li>
+                        <li id="logoutButton" class="nav-item ml-md-auto"><a href="#" class="nav-link" data-toggle="modal" data-target="#sign-out"><i class="fas fa-sign-out-alt text-danger fa-lg"></i></a></li>
                     </ul>
                     </div>
                 </div>
@@ -73,28 +73,8 @@
             </div>
             </div>
         </div>
-        </nav>
-        <!-- end of navbar --> 
-        
-        <!-- modal -->
-        <div class="modal fade" id="sign-out">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Want to leave?</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        Press logout to leave
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal">Stay Here</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Logout</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end of modal -->
+    </nav>
+    <!-- end of navbar --> 
 
     <!-- cards -->
     <section>
@@ -118,7 +98,7 @@
                                     <div id="revenueModal" class="topModal">
                                         <div class="modal-content">
                                             <span class="close">&times;</span>
-                                            <p id="revenueExplanation">Your revenue is all money taken in from last year (sales + service).</p>
+                                            <p id="revenueExplanation">Your revenue is all money recieved from 2019 (sales revenue + service revenue).</p>
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +120,7 @@
                                         <div id="expensesModal" class="topModal">
                                             <div class="modal-content">
                                                 <span class="close">&times;</span>
-                                                <p id="expensesExplanation">All expenses</p>
+                                                <p id="expensesExplanation">All operating expenses from 2019 total expenses - (interest, taxes, ammoritzation)</p>
                                             </div>
                                         </div>
                                     </div>
@@ -162,7 +142,7 @@
                                 <div id="ebitaModal" class="topModal">
                                     <div class="modal-content">
                                         <span class="close">&times;</span>
-                                        <p id="ebitaExplanation">Earnings Minus Interest Taxes Depreciation Ammoritzation. You have less control over these expenses. If cash flow is tight, Main Street recommends you look at your other expenses before these line items.</p>
+                                        <p id="ebitaExplanation">Earnings Minus Interest Taxes Depreciation Ammoritzation. You have less control over these expenses. If cash flow is tight, Main Street recommends you reduce other expenses before these line items.</p>
                                     </div>
                                 </div>
                             </div>
@@ -184,7 +164,7 @@
                                     <div id="profitModal" class="topModal">
                                         <div class="modal-content">
                                             <span class="close">&times;</span>
-                                            <p id="profitExplanation">Total take home pay for owner.</p>
+                                            <p id="profitExplanation">Your 2019 takehome pay</p>
                                         </div>
                                     </div>
                                 </div>

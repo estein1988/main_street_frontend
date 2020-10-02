@@ -23,15 +23,15 @@ fetch(profileURL, {headers})
     business.financials.map(financial => {
         if (financial.year === '2019') {
             let revenue2019sum = financial.sales_revenue + financial.service_revenue
-            let expenses2019sum = financial.advertising + financial.cogs + financial.employee_benefits + financial.equipment + financial.insurance + financial.maintenance + financial.office_supplies + financial.rent + financial.r_and_d + financial.salaries + financial.software + financial.travel + financial.utilities + financial.website + financial.other_expense + financial.interest + financial.taxes + financial.ammoritization + financial.depreciation
+            let expenses2019sum = financial.advertising + financial.cogs + financial.employee_benefits + financial.equipment + financial.insurance + financial.maintenance + financial.office_supplies + financial.rent + financial.r_and_d + financial.salaries + financial.software + financial.travel + financial.utilities + financial.website + financial.other_expense
             let ebita2019sum = financial.sales_revenue + financial.service_revenue - financial.advertising - financial.cogs - financial.employee_benefits - financial.equipment - financial.insurance - financial.maintenance - financial.office_supplies - financial.rent - financial.r_and_d - financial.salaries - financial.software - financial.travel - financial.utilities - financial.website - financial.other_expense
             let profit2019sum = financial.sales_revenue + financial.service_revenue - financial.advertising - financial.cogs - financial.employee_benefits - financial.equipment - financial.insurance - financial.maintenance - financial.office_supplies - financial.rent - financial.r_and_d - financial.salaries - financial.software - financial.travel - financial.utilities - financial.website - financial.other_expense - financial.interest - financial.taxes - financial.ammoritization - financial.depreciation
             
             if (ebita2019sum <250000) {
-                valuation = `${ebita2019sum * 2} - ${ebita2019sum * 3}`
+                valuation = `$${ebita2019sum * 2} - $${ebita2019sum * 3}`
                 offer = ebita2019sum * 3.5
             } else {
-                valuation = `${ebita2019sum * 3} - $${ebita2019sum * 4}`
+                valuation = `$${ebita2019sum * 3} - $${ebita2019sum * 4}`
                 offer = ebita2019sum * 4.5
             }
 
@@ -59,7 +59,7 @@ fetch(profileURL, {headers})
 
             hireHelp.innerHTML = `<a href='https://www.ziprecruiter.com'>ZipRecruiter</a>`
             highestExpense.textContent = `$${max}`
-            highestText.textContent = `Take a look at your Employee Salaries to reduce this cost.`
+            highestText.textContent = `Review Income Statement to try to reduce this cost.`
         }
     })
 })
@@ -83,19 +83,19 @@ function drawChart(business){
             let revenueYear2 = business.financials[1].sales_revenue + business.financials[1].service_revenue
             let revenueYear3 = business.financials[2].sales_revenue + business.financials[2].service_revenue
             
-            let expensesYear1 = business.financials[0].cogs + business.financials[0].employee_benefits + business.financials[0].equipment + business.financials[0].insurance + business.financials[0].maintenance + business.financials[0].office_supplies + business.financials[0].rent + business.financials[0].r_and_d + business.financials[0].salaries + business.financials[0].software + business.financials[0].travel + business.financials[0].utilities + business.financials[0].website + business.financials[0].other_expense + business.financials[0].interest + business.financials[0].taxes + business.financials[0].ammoritization + business.financials[0].depreciation
-            let expensesYear2 = business.financials[1].cogs + business.financials[1].employee_benefits + business.financials[1].equipment + business.financials[1].insurance + business.financials[1].maintenance + business.financials[1].office_supplies + business.financials[1].rent + business.financials[1].r_and_d + business.financials[1].salaries + business.financials[1].software + business.financials[1].travel + business.financials[1].utilities + business.financials[1].website + business.financials[1].other_expense + business.financials[1].interest + business.financials[1].taxes + business.financials[1].ammoritization + business.financials[1].depreciation
-            let expensesYear3 = business.financials[2].cogs + business.financials[2].employee_benefits + business.financials[2].equipment + business.financials[2].insurance + business.financials[2].maintenance + business.financials[2].office_supplies + business.financials[2].rent + business.financials[2].r_and_d + business.financials[2].salaries + business.financials[2].software + business.financials[2].travel + business.financials[2].utilities + business.financials[2].website + business.financials[2].other_expense + business.financials[2].interest + business.financials[2].taxes + business.financials[2].ammoritization + business.financials[2].depreciation
+            let expensesYear1 = business.financials[0].advertising + business.financials[0].cogs + business.financials[0].employee_benefits + business.financials[0].equipment + business.financials[0].insurance + business.financials[0].maintenance + business.financials[0].office_supplies + business.financials[0].rent + business.financials[0].r_and_d + business.financials[0].salaries + business.financials[0].software + business.financials[0].travel + business.financials[0].utilities + business.financials[0].website + business.financials[0].other_expense + business.financials[0].interest + business.financials[0].taxes + business.financials[0].ammoritization + business.financials[0].depreciation
+            let expensesYear2 = business.financials[0].advertising + business.financials[1].cogs + business.financials[1].employee_benefits + business.financials[1].equipment + business.financials[1].insurance + business.financials[1].maintenance + business.financials[1].office_supplies + business.financials[1].rent + business.financials[1].r_and_d + business.financials[1].salaries + business.financials[1].software + business.financials[1].travel + business.financials[1].utilities + business.financials[1].website + business.financials[1].other_expense + business.financials[1].interest + business.financials[1].taxes + business.financials[1].ammoritization + business.financials[1].depreciation
+            let expensesYear3 = business.financials[0].advertising + business.financials[2].cogs + business.financials[2].employee_benefits + business.financials[2].equipment + business.financials[2].insurance + business.financials[2].maintenance + business.financials[2].office_supplies + business.financials[2].rent + business.financials[2].r_and_d + business.financials[2].salaries + business.financials[2].software + business.financials[2].travel + business.financials[2].utilities + business.financials[2].website + business.financials[2].other_expense + business.financials[2].interest + business.financials[2].taxes + business.financials[2].ammoritization + business.financials[2].depreciation
 
             let profitYear1 = revenueYear1 - expensesYear1
             let profitYear2 = revenueYear2 - expensesYear2
             let profitYear3 = revenueYear3 - expensesYear3
 
             var data = google.visualization.arrayToDataTable([
-            ['Year',    'Sales',        'Expenses',     'Profit'],
-            [year1,    revenueYear1,   expensesYear1,   profitYear1],  
-            [year2,    revenueYear2,   expensesYear2,   profitYear2],
-            [year3,    revenueYear3,   expensesYear3,   profitYear3]
+            ['Year',   'Total Revenue',   'Total Expenses',     'Net Profit'],
+            [year1,    revenueYear1,        expensesYear1,      profitYear1],  
+            [year2,    revenueYear2,        expensesYear2,      profitYear2],
+            [year3,    revenueYear3,        expensesYear3,      profitYear3]
         ]);
         var options = {
             chart: {
@@ -169,7 +169,7 @@ function drawPieChart(business){
         ]);
 
         var options = {
-        title: '2019 Distribution of Expneses',
+        title: '2019 Distribution of Operating Expeneses',
         is3D: true,
         titleFontSize: 28,
         };
@@ -400,4 +400,12 @@ window.onclick = function(event) {
 
 function handleResponse(response){
     return response.json()
+}
+
+const logoutButton = document.querySelector('#logoutButton')
+logoutButton.addEventListener('click', logoutApp)
+
+function logoutApp(event) {
+    localStorage.clear()
+    window.location.href = '/index.html'
 }

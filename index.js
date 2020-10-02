@@ -23,7 +23,6 @@ function loginUser(event){
     })
     .then(parseJSON)
     .then(result => {
-        console.log(result)
         {localStorage.setItem('token', result.token)}
     })
 }

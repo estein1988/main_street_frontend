@@ -65,12 +65,20 @@ fetch(financialURL, {
     function appendMessage(messages) {
         if (Array.isArray(messages)) {
             messages.forEach(message => {
+            const previousErrorMessage = form.querySelector('p')  
+            if (previousErrorMessage) {
+                previousErrorMessage.remove()
+            }
             const errorMessage = document.createElement('p')
             errorMessage.textContent = message
             errorMessage.classList.add('.error-message')
             form.appendChild(errorMessage)
-            })
+            });
         } else {   
+            const previousSuccessMessage = form.querySelector('p')
+            if (previousSuccessMessage) {
+                previousSuccessMessage.remove()
+            }
             const successMessage = document.createElement('p')
             successMessage.textContent = "Financial Statement Successfully Entered"
             form.appendChild(successMessage)     
