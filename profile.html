@@ -15,129 +15,178 @@
 </head>
 <body>
 
-    <h1 id="bannerText">Profile Page</h1>
-
-    <form id="financials-form">
-        <div class="form-group">
-            <label for="year">Year Ending</label>
-            <input type="text" class="form-control" id="year" name="year" placeholder="Year Ending">
+    <section id="header">
+        <div class="container-fluid">
+            <!-- <nav class="navbar navbar-expand-1g navbar-dark"> -->
+                <div class="container">
+                    <div class=container>
+                        <div class="text-center col-sm-6">
+                            <h2 id="bannerText">Main Street Valuations</h2>
+                    </div>
+                </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"> 
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
         </div>
+    </section>
 
-        <div class="form-group">
-            <label for="sales_revenue">Sales Revenue</label>
-            <input type="text" class="form-control" id="sales_revenue" name="sales_revenue" placeholder="Sales Revenue">
+    <section class="main">
+
+
+    <!-- Default form register -->
+<form class="text-left border border-light p-5" id="financials-form" action="#!">
+    <div class="col-6">
+        <p id="enter3years" class="h4 mb-4">Please enter the 3 years of your Income Statements</p>
+    </div>
+
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Year Ending -->
+            <input type="text" id="year" name="year" class="form-control" placeholder="Year Ending">
         </div>
-
-        <div class="form-group">
-            <label for="service_revenue">Service Revenue</label>
-            <input type="text" class="form-control" id="service_revenue" name="service_revenue" placeholder="Service Revenue">
+        <div class="col-3">
+            <!-- Sales Revenue -->
+            <input type="text" id="sales_revenue" name="sales_revenue" class="form-control" placeholder="Sales Revenue">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="advertising">Advertising</label>
-            <input type="text" class="form-control" id="advertising" name="advertising" placeholder="Advertising">
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Service Revenue -->
+            <input type="text" id="service_revenue" name="service_revenue" class="form-control" placeholder="Service Revenue">
         </div>
-
-        <div class="form-group">
-            <label for="cogs">Cost of Goods Sold</label>
-            <input type="text" class="form-control" id="cogs" name="cogs" placeholder="Cost of Goods Sold">
+        <div class="col-3">
+            <!-- Advertising -->
+            <input type="text" id="advertising" name="advertising" class="form-control" placeholder="Advertising">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="employee_benefits">Employee Benefits</label>
-            <input type="text" class="form-control" id="employee_benefits" name="employee_benefits" placeholder="Employee Benefits">
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- COGs -->
+            <input type="text" id="cogs" name="cogs" class="form-control" placeholder="Cost of Goods Sold">
         </div>
-
-        <div class="form-group">
-            <label for="equipment">Equipment</label>
-            <input type="text" class="form-control" id="equipment" name="equipment" placeholder="Equipment">
+        <div class="col-3">
+            <!-- Employee Benefits -->
+            <input type="text" id="employee_benefits" name="employee_benefits" class="form-control" placeholder="Employee Benefits">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="insurance">Insurance</label>
-            <input type="text" class="form-control" id="insurance" name="insurance" placeholder="Insurance">
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Equipment -->
+            <input type="text" id="equipment" name="equipment" class="form-control" placeholder="Equipment">
         </div>
-
-        <div class="form-group">
-            <label for="maintenance">Maintenance</label>
-            <input type="text" class="form-control" id="maintenance" name="maintenance" placeholder="Maintenance">
+        <div class="col-3">
+            <!-- Insurance -->
+            <input type="text" id="insurance" name="insurance" class="form-control" placeholder="Insurance">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="office_supplies">Office Supplies</label>
-            <input type="text" class="form-control" id="office_supplies" name="office_supplies" placeholder="Office Supplies">
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Maintenance -->
+            <input type="text" id="maintenance" name="maintenance" class="form-control" placeholder="Maintenance">
         </div>
-
-        <div class="form-group">
-            <label for="rent">Rent</label>
-            <input type="text" class="form-control" id="rent" name="rent" placeholder="rent">
+        <div class="col-3">
+            <!-- Office Supplies -->
+            <input type="text" id="office_supplies" name="office_supplies" class="form-control" placeholder="Office Supplies">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="r_and_d">Research & Development</label>
-            <input type="text" class="form-control" id="r_and_d" name="r_and_d" placeholder="Research & Development">
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Rent -->
+            <input type="text" id="rent" name="rent" class="form-control" placeholder="Rent">
         </div>
-
-        <div class="form-group">
-            <label for="salaries">Salaries</label>
-            <input type="text" class="form-control" id="salaries" name="salaries" placeholder="Salaries">
+        <div class="col-3">
+            <!-- R&D -->
+            <input type="text" id="r_and_d" name="r_and_d" class="form-control" placeholder="Research & Development">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="software">Software</label>
-            <input type="text" class="form-control" id="software" name="software" placeholder="Software">
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Salaries -->
+            <input type="text" id="salaries" name="salaries" class="form-control" placeholder="Salaries">
         </div>
-
-        <div class="form-group">
-            <label for="travel">Travel</label>
-            <input type="text" class="form-control" id="travel" name="travel" placeholder="Travel">
+        <div class="col-3">
+            <!-- Software -->
+            <input type="text" id="software" name="software" class="form-control" placeholder="Software">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="utilities">Utilities</label>
-            <input type="text" class="form-control" id="utilities" name="utilities" placeholder="Utilities">
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Travel -->
+            <input type="text" id="travel" name="travel" class="form-control" placeholder="Travel">
         </div>
-
-        <div class="form-group">
-            <label for="Website">Website</label>
-            <input type="text" class="form-control" id="website" name="website" placeholder="website">
+        <div class="col-3">
+            <!-- Utilities -->
+            <input type="text" id="utilities" name="utilities" class="form-control" placeholder="Utilties">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="other_expense">Other Expense</label>
-            <input type="text" class="form-control" id="other_expense" name="other_expense" placeholder="Other Expense">
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Website -->
+            <input type="text" id="website" name="website" class="form-control" placeholder="Website">
         </div>
-
-        <div class="form-group">
-            <label for="interest">Interest</label>
-            <input type="text" class="form-control" id="interest" name="interest" placeholder="Interest">
+        <div class="col-3">
+            <!-- Other -->
+            <input type="text" id="other_expense" name="other_expense" class="form-control" placeholder="Other Expense">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="taxes">Taxes</label>
-            <input type="text" class="form-control" id="taxes" name="taxes" placeholder="Taxes">
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Interest -->
+            <input type="text" id="interest" name="interest" class="form-control" placeholder="Interest">
         </div>
-
-        <div class="form-group">
-            <label for="ammoritization">Ammoritization</label>
-            <input type="text" class="form-control" id="ammoritization" name="ammoritization" placeholder="Ammoritization">
+        <div class="col-3">
+            <!-- Taxes -->
+            <input type="text" id="taxes" name="taxes" class="form-control" placeholder="Taxes">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="depreciation">Depreciation</label>
-            <input type="text" class="form-control" id="depreciation" name="depreciation" placeholder="depreciation">
+    <div class="form-row mb-4">
+        <div class="col-3">
+            <!-- Ammoritization -->
+            <input type="text" id="ammoritization" name="ammoritization" class="form-control" placeholder="Ammoritization">
         </div>
-
-        <div class="form-group">
-            <label for="business_id">Business Id</label>
-            <select class="form-control" id="business_id" name="business_id">
-                <option id="business_id"></option>
-            </select>
+        <div class="col-3">
+            <!-- Depreciation -->
+            <input type="text" id="depreciation" name="depreciation" class="form-control" placeholder="Depreciation">
         </div>
+    </div>
+    
+    <div class="form-row mb-4">
+            <div class="col-3">
+                <select class="form-control" id="business_id" name="business_id">
+                    <option id="business_id"></option>
+                </select>
+            </div>
+        </div>
+    </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+    <!-- Submit Financials button -->
+    <div class="col-3">
+        <button class="btn btn-info my-4 btn-block" id="submit-finals" type="submit">Submit Financials</button>
+    </div>
+
+    <!-- Submit Financials button -->
+    <div class="col-3">
+        <button class="btn btn-info my-4 btn-block" id="dashBoardButton" type="submit">Go To Dashboard</button>
+    </div>
 
     </form>
+</section>
+
+</section>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

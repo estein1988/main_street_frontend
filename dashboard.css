@@ -6,7 +6,7 @@ body {
 /* navbar */
 .sidebar {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .9)), url(img1.jpeg);
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .9)), url(new_picture.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -110,6 +110,19 @@ body {
 }
   /* end of task list */
 
+.logoutModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 10px;
+    top: 10px;
+    width: 175%;
+    height: 175%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+}
+
 .topModal {
     display: none;
     position: fixed;
@@ -148,4 +161,13 @@ body {
     overflow: hidden;
     position: relative;
     left: -8px;
+}
+
+#columnchart_material, #piechart_3d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    padding: 20px;
+    background: whitesmoke;
 }

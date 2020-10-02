@@ -3,6 +3,7 @@ const profileURL = `${baseURL}/profile`
 const financialURL = `${baseURL}/financials`
 const bannerText = document.querySelector('#bannerText')
 const form = document.querySelector('#financials-form')
+const dashBoardButton = document.querySelector('#dashBoardButton')
 
 const headers = {
     'Content-Type': 'application/json',
@@ -12,13 +13,11 @@ const headers = {
 fetch(profileURL, {headers})
     .then(response => response.json())
     .then(business => {
-        const welcomeMessage = document.createElement('h2')
-        welcomeMessage.textContent = `Hello ${business.first_name}`
 
-        const businessName = document.createElement('p')
-        businessName.innerHTML = `<a href='dashboard.html?business.id=${business.id}'>${business.business_name}</a>`
-        bannerText.append(welcomeMessage, businessName)
-        
+        const welcomeMessage = document.createElement('h2')
+        welcomeMessage.textContent = `Welcome back ${business.first_name}`
+        bannerText.append(welcomeMessage)
+
         form.addEventListener('submit', submitForm)
     })
         
@@ -68,7 +67,8 @@ fetch(financialURL, {
             messages.forEach(message => {
             const errorMessage = document.createElement('p')
             errorMessage.textContent = message
-            document.body.appendChild(errorMessage)
+            errorMessage.classList.add('.error-message')
+            form.appendChild(errorMessage)
             })
         } else {   
             const successMessage = document.createElement('h2')
@@ -90,6 +90,8 @@ fetch(profileURL, {headers})
         businessField.appendChild(businessOption)
     })
 
-// function handleResponse(response){
-//     return response.json()
-// }
+dashBoardButton.addEventListener('click', goToDashBoard)
+
+function goToDashBoard(event){
+    window.location.href = '/dashboard.html'
+}

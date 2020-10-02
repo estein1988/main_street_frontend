@@ -9,7 +9,6 @@ loginForm.addEventListener('submit', loginUser)
 newUser.addEventListener('click', createNewUser)
 getUsers.addEventListener('click', retrieveUsers)
 
-
 function loginUser(event){
     event.preventDefault()
     const loginFormData = new FormData(event.target)

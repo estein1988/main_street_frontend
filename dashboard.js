@@ -26,8 +26,15 @@ fetch(profileURL, {headers})
             let expenses2019sum = financial.advertising + financial.cogs + financial.employee_benefits + financial.equipment + financial.insurance + financial.maintenance + financial.office_supplies + financial.rent + financial.r_and_d + financial.salaries + financial.software + financial.travel + financial.utilities + financial.website + financial.other_expense + financial.interest + financial.taxes + financial.ammoritization + financial.depreciation
             let ebita2019sum = financial.sales_revenue + financial.service_revenue - financial.advertising - financial.cogs - financial.employee_benefits - financial.equipment - financial.insurance - financial.maintenance - financial.office_supplies - financial.rent - financial.r_and_d - financial.salaries - financial.software - financial.travel - financial.utilities - financial.website - financial.other_expense
             let profit2019sum = financial.sales_revenue + financial.service_revenue - financial.advertising - financial.cogs - financial.employee_benefits - financial.equipment - financial.insurance - financial.maintenance - financial.office_supplies - financial.rent - financial.r_and_d - financial.salaries - financial.software - financial.travel - financial.utilities - financial.website - financial.other_expense - financial.interest - financial.taxes - financial.ammoritization - financial.depreciation
-            let valuation = ebita2019sum * 3
-            let offer = ebita2019sum * 5
+            
+            if (ebita2019sum <250000) {
+                valuation = `${ebita2019sum * 2} - ${ebita2019sum * 3}`
+                offer = ebita2019sum * 3.5
+            } else {
+                valuation = `${ebita2019sum * 3} - $${ebita2019sum * 4}`
+                offer = ebita2019sum * 4.5
+            }
+
             let arr = Object.values(financial)
             let arr2 = arr.splice(4, 19)
             let max = Math.max(...arr2)
@@ -37,11 +44,22 @@ fetch(profileURL, {headers})
             ebita2019card.textContent = `$${ebita2019sum}`
             profit2019card.textContent = `$${profit2019sum}`
             businessValuation.textContent = `$${valuation}`
-            valuationText.textContent = `We value your business at $${valuation}, 3x your 2019 EBITA. But remember, ${business.first_name}, you are your company's greatest asset so keep working hard!`
-            sellBusiness.textContent = `Main Street is prepared to solicit ${business.business_name} an offer of: $${offer}, 5x your last year's EBITA. This offer is non-binding. A Main Street agent will contact you shortly at ${business.business_phone}.`
+
+            if (ebita2019sum <250000) {
+                valuationText.textContent = `Seeing ${business.business_name} had less than $250k in EBITA, Main Street values your business between: $${valuation}, ~2-3x your 2019 EBITA.`
+            } else {
+                valuationText.textContent = `Seeing ${business.business_name} more than $250k in EBITA, Main Street values your business between: $${valuation}, ~3-4x your 2019 EBITA.`
+            }
+
+            if (ebita2019sum <250000) {
+                sellBusiness.textContent = `Main Street is prepared to solicit ${business.business_name} an offer of: $${offer}, 3.5x your last year's EBITA. This offer is non-binding. A Main Street agent will contact you shortly at ${business.business_phone}.`
+            } else {
+                sellBusiness.textContent = `Main Street is prepared to solicit ${business.business_name} an offer of: $${offer}, 4.5x your last year's EBITA. This offer is non-binding. A Main Street agent will contact you shortly at ${business.business_phone}.`
+            }
+
             hireHelp.innerHTML = `<a href='https://www.ziprecruiter.com'>ZipRecruiter</a>`
             highestExpense.textContent = `$${max}`
-            highestText.textContent = `placeholder`
+            highestText.textContent = `Take a look at your Employee Salaries to reduce this cost.`
         }
     })
 })
@@ -88,6 +106,48 @@ function drawChart(business){
             var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
             chart.draw(data, google.charts.Bar.convertOptions(options));
         }
+    }
+}
+
+fetch(profileURL, {headers})
+    .then(handleResponse)
+    .then(drawPieChart)
+
+function drawPieChart(business){
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawPieChart);
+
+    function drawPieChart() {
+        let expensesPieChart = business.financials[0].cogs + business.financials[0].employee_benefits + business.financials[0].equipment + business.financials[0].insurance + business.financials[0].maintenance + business.financials[0].office_supplies + business.financials[0].rent + business.financials[0].r_and_d + business.financials[0].salaries + business.financials[0].software + business.financials[0].travel + business.financials[0].utilities + business.financials[0].website + business.financials[0].other_expense + business.financials[0].interest + business.financials[0].taxes + business.financials[0].ammoritization + business.financials[0].depreciation
+        let cogsPieChart = business.financials[0].cogs / expensesPieChart
+        let benefitsPieChart = business.financials[0].employee_benefits / expensesPieChart
+        let equipmentPieChart = business.financials[0].equipment / expensesPieChart
+        let insurancePieChart = business.financials[0].insurance / expensesPieChart
+        let maintenancePieChart = business.financials[0].maintenance / expensesPieChart
+        let rentPieChart = business.financials[0].rent / expensesPieChart
+        let salariesPieChart = business.financials[0].salaries / expensesPieChart
+        let remainingPieChart = (business.financials[0].office_supplies + business.financials[0].r_and_d + business.financials[0].software + business.financials[0].travel + business.financials[0].utilities + business.financials[0].website + business.financials[0].other_expense) / expensesPieChart
+
+        var data = google.visualization.arrayToDataTable([
+
+        ['Expense',             'Hours per Day'],
+        ['COGs',                cogsPieChart],
+        ['Employee Benefits',   benefitsPieChart],
+        ['Equipment',           equipmentPieChart],
+        ['Insurance',           insurancePieChart],
+        ['Maintenance',         maintenancePieChart],
+        ['Rent',                rentPieChart],
+        ['Salares',             salariesPieChart],
+        ['Remaining Op Ex',     remainingPieChart]
+        ]);
+
+        var options = {
+        title: 'My Daily Activities',
+        is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
     }
 }
 
@@ -313,14 +373,3 @@ window.onclick = function(event) {
 function handleResponse(response){
     return response.json()
 }
-
-
-// const searchParams = new URLSearchParams(window.location.search)
-// const businessId = searchParams.get('business.id')
-
-// fetch(`http://localhost:3000/businesses/${businessId}`)
-//     .then(response=>response.json())
-//     .then(handleResponse)
-//     .then(renderCards)
-
-// function renderCards(business) {
