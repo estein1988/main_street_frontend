@@ -28,10 +28,10 @@ fetch(profileURL, {headers})
             let profit2019sum = financial.sales_revenue + financial.service_revenue - financial.advertising - financial.cogs - financial.employee_benefits - financial.equipment - financial.insurance - financial.maintenance - financial.office_supplies - financial.rent - financial.r_and_d - financial.salaries - financial.software - financial.travel - financial.utilities - financial.website - financial.other_expense - financial.interest - financial.taxes - financial.ammoritization - financial.depreciation
             
             if (ebita2019sum <250000) {
-                valuation = `$${ebita2019sum * 2} - $${ebita2019sum * 3}`
+                valuation = `${ebita2019sum * 2} - $${ebita2019sum * 3}`
                 offer = ebita2019sum * 3.5
             } else {
-                valuation = `$${ebita2019sum * 3} - $${ebita2019sum * 4}`
+                valuation = `${ebita2019sum * 3} - $${ebita2019sum * 4}`
                 offer = ebita2019sum * 4.5
             }
 
