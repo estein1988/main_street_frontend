@@ -101,6 +101,33 @@ function drawChart(business){
             chart: {
             title: 'Last Three Years of Company Performance',
             subtitle: `Sales, Expenses, and Profit: ${year3}-${year1}`,
+            }, 
+            hAxis: {
+                title: 'Year',
+                titleTextStyle: {
+                color: "#000",
+                fontName: "sans-serif",
+                fontSize: 22,
+                bold: true,
+                italic: false
+                }
+            },
+            vAxis: {
+                title: 'Amount',
+                titleTextStyle: {
+                color: "#000",
+                fontName: "sans-serif",
+                fontSize: 22,
+                bold: true,
+                italic: false
+                }
+            },
+            annotations: {
+                alwaysOutside: true,
+                textStyle: {
+                fontSize: 22,
+                auraColor: 'none'
+                }
             }
         };
             var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
@@ -118,19 +145,19 @@ function drawPieChart(business){
     google.charts.setOnLoadCallback(drawPieChart);
 
     function drawPieChart() {
-        let expensesPieChart = business.financials[0].cogs + business.financials[0].employee_benefits + business.financials[0].equipment + business.financials[0].insurance + business.financials[0].maintenance + business.financials[0].office_supplies + business.financials[0].rent + business.financials[0].r_and_d + business.financials[0].salaries + business.financials[0].software + business.financials[0].travel + business.financials[0].utilities + business.financials[0].website + business.financials[0].other_expense + business.financials[0].interest + business.financials[0].taxes + business.financials[0].ammoritization + business.financials[0].depreciation
-        let cogsPieChart = business.financials[0].cogs / expensesPieChart
-        let benefitsPieChart = business.financials[0].employee_benefits / expensesPieChart
-        let equipmentPieChart = business.financials[0].equipment / expensesPieChart
-        let insurancePieChart = business.financials[0].insurance / expensesPieChart
-        let maintenancePieChart = business.financials[0].maintenance / expensesPieChart
-        let rentPieChart = business.financials[0].rent / expensesPieChart
-        let salariesPieChart = business.financials[0].salaries / expensesPieChart
-        let remainingPieChart = (business.financials[0].office_supplies + business.financials[0].r_and_d + business.financials[0].software + business.financials[0].travel + business.financials[0].utilities + business.financials[0].website + business.financials[0].other_expense) / expensesPieChart
+        let expensesPieChart = (business.financials[0].cogs + business.financials[0].employee_benefits + business.financials[0].equipment + business.financials[0].insurance + business.financials[0].maintenance + business.financials[0].office_supplies + business.financials[0].rent + business.financials[0].r_and_d + business.financials[0].salaries + business.financials[0].software + business.financials[0].travel + business.financials[0].utilities + business.financials[0].website + business.financials[0].other_expense + business.financials[0].interest + business.financials[0].taxes + business.financials[0].ammoritization + business.financials[0].depreciation)
+        let cogsPieChart = (business.financials[0].cogs) / (expensesPieChart)
+        let benefitsPieChart = (business.financials[0].employee_benefits) / (expensesPieChart)
+        let equipmentPieChart = (business.financials[0].equipment) / (expensesPieChart)
+        let insurancePieChart = (business.financials[0].insurance) / (expensesPieChart)
+        let maintenancePieChart = (business.financials[0].maintenance) / (expensesPieChart)
+        let rentPieChart = (business.financials[0].rent) / (expensesPieChart)
+        let salariesPieChart = (business.financials[0].salaries) / (expensesPieChart)
+        let remainingPieChart = (business.financials[0].office_supplies + business.financials[0].r_and_d + business.financials[0].software + business.financials[0].travel + business.financials[0].utilities + business.financials[0].website + business.financials[0].other_expense) / (expensesPieChart)
 
         var data = google.visualization.arrayToDataTable([
 
-        ['Expense',             'Hours per Day'],
+        ['Expense',             'Type'],
         ['COGs',                cogsPieChart],
         ['Employee Benefits',   benefitsPieChart],
         ['Equipment',           equipmentPieChart],
@@ -142,8 +169,9 @@ function drawPieChart(business){
         ]);
 
         var options = {
-        title: 'My Daily Activities',
+        title: '2019 Distribution of Expneses',
         is3D: true,
+        titleFontSize: 28,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));

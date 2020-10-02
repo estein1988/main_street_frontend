@@ -21,12 +21,12 @@ function loginUser(event){
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(user)
     })
-    .then(response => response.json())
+    .then(parseJSON)
     .then(result => {
+        console.log(result)
         {localStorage.setItem('token', result.token)}
     })
 }
-
 
 function retrieveUsers(event) {
     fetch(businessesURL, {
@@ -47,4 +47,8 @@ function retrieveUsers(event) {
 
 function createNewUser(event){
     window.location.href = '/new_business_form.html'
+}
+
+function parseJSON(response){
+    return response.json()
 }

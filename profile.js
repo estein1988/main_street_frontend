@@ -71,9 +71,9 @@ fetch(financialURL, {
             form.appendChild(errorMessage)
             })
         } else {   
-            const successMessage = document.createElement('h2')
+            const successMessage = document.createElement('p')
             successMessage.textContent = "Financial Statement Successfully Entered"
-            document.body.append(successMessage)     
+            form.appendChild(successMessage)     
         }
     }
 }

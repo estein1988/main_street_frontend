@@ -6,7 +6,7 @@ body {
 /* navbar */
 .sidebar {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .9)), url(new_picture.jpg);
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .9)), url(city_scape.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -108,7 +108,7 @@ body {
 .task-border {
     border-left: 3px solid #f66436;
 }
-  /* end of task list */
+/* end of task list */
 
 .logoutModal {
     display: none;
@@ -168,6 +168,7 @@ body {
     justify-content: center;
     align-items: center;
     border: solid;
+    border-width: 1px;
     padding: 20px;
     background: whitesmoke;
 }
