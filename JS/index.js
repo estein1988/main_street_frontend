@@ -48,8 +48,6 @@ function retrieveUsers(event) {
     })
     .then(response => {
         if(response.ok) {
-            // const successMessage = document.querySelector('#success-message')
-            // successMessage.textContent = 'Good'
             window.location.href = '/profile.html'
         } else {
             const errorMessage = document.querySelector('#error-message')
