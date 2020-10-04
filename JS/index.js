@@ -23,7 +23,19 @@ function loginUser(event){
     })
     .then(parseJSON)
     .then(result => {
-        {localStorage.setItem('token', result.token)}
+        if (result.status === "unauthorized") {
+            const errorMessage = document.querySelector('#error-message')
+            errorMessage.textContent = `Invalid credentials`
+        } else {
+            {localStorage.setItem('token', result.token)}
+
+            const previousErrorMessage = document.querySelector('#error-message')  
+            if (previousErrorMessage) {
+                previousErrorMessage.remove()
+            }
+            const successMessage = document.querySelector('#success-message')
+            successMessage.textContent = 'Success, please continue to Financials Page'
+        }
     })
 }
 
@@ -36,6 +48,8 @@ function retrieveUsers(event) {
     })
     .then(response => {
         if(response.ok) {
+            // const successMessage = document.querySelector('#success-message')
+            // successMessage.textContent = 'Good'
             window.location.href = '/profile.html'
         } else {
             const errorMessage = document.querySelector('#error-message')

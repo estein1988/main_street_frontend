@@ -79,6 +79,14 @@
     text-align: center;
 }
 
+#success-message{
+    padding: 0px;
+    margin: 0px;
+    color: green;
+    background-color: white;
+    text-align: center;
+}
+
 @media (max-width: 768px){
     .main{
         padding: 200px 0;

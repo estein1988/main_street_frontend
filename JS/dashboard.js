@@ -38,7 +38,6 @@ fetch(profileURL, {headers})
             let arr = Object.values(financial)
             let arr2 = arr.splice(4, 19)
             let max = Math.max(...arr2)
-
             revenue2019card.textContent = `$${revenue2019sum}`
             expenses2019card.textContent = `$${expenses2019sum}`
             ebita2019card.textContent = `$${ebita2019sum}`
@@ -46,15 +45,15 @@ fetch(profileURL, {headers})
             businessValuation.textContent = `$${valuation}`
 
             if (ebita2019sum <250000) {
-                valuationText.textContent = `Seeing ${business.business_name} had less than $250k in EBITA, Main Street values your business between: $${valuation}, ~2-3x your 2019 EBITA.`
+                valuationText.textContent = `Seeing ${business.business_name} had less than $250k in EBITDA, Main Street values your business between: $${valuation}, ~2-3x your 2019 EBITA.`
             } else {
-                valuationText.textContent = `Seeing ${business.business_name} more than $250k in EBITA, Main Street values your business between: $${valuation}, ~3-4x your 2019 EBITA.`
+                valuationText.textContent = `Seeing ${business.business_name} more than $250k in EBITDA, Main Street values your business between: $${valuation}, ~3-4x your 2019 EBITA.`
             }
 
             if (ebita2019sum <250000) {
-                sellBusiness.textContent = `Main Street is prepared to solicit ${business.business_name} an offer of: $${offer}, 3.5x your last year's EBITA. This offer is non-binding. A Main Street agent will contact you shortly at ${business.business_phone}.`
+                sellBusiness.textContent = `Main Street is prepared to solicit ${business.business_name} an offer of: $${offer}, 3.5x your last year's EBITDA. This offer is non-binding. A Main Street agent will contact you shortly at ${business.business_phone}.`
             } else {
-                sellBusiness.textContent = `Main Street is prepared to solicit ${business.business_name} an offer of: $${offer}, 4.5x your last year's EBITA. This offer is non-binding. A Main Street agent will contact you shortly at ${business.business_phone}.`
+                sellBusiness.textContent = `Main Street is prepared to solicit ${business.business_name} an offer of: $${offer}, 4.5x your last year's EBITDA. This offer is non-binding. A Main Street agent will contact you shortly at ${business.business_phone}.`
             }
 
             hireHelp.innerHTML = `<a href='https://www.ziprecruiter.com'>ZipRecruiter</a>`
