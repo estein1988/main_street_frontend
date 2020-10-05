@@ -2,6 +2,9 @@
 
 An interactive tool to better manage your small business revenue, expenses and profit.
 
+## Backend Repo
+https://github.com/estein1988/main_street_backend
+
 ## General Info
 The app Main Street Valuations allows new users to enter their basic business information, authenticate users to restrict access to only their business, enter business' financials and view analytics in regards to the business structure. The user dashboard allows users to see their last year's revenue, expenses, ebita and profit, as well as renders the majority of this information to charts and a table (in the form of an Income Statement). Finally, the app gives a couple of options for advice to the business owner, including a valuation range and what they would receive for an offer on the business. 
  
