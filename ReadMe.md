@@ -5,7 +5,22 @@ An interactive tool to better manage your small business revenue, expenses and p
 ## Backend Repo
 https://github.com/estein1988/main_street_backend
 
-## General Info
+## Setup
+
+To run Main Street Valuations, install it locally by cloning this GitHub repository and run:
+```
+BE:
+bundle install
+rails db:migrate
+rails db:seed
+Open Rails on local host
+
+FE:
+Open index.html on lite-server
+
+```
+
+### General Info
 The app Main Street Valuations allows new users to enter their basic business information, authenticate users to restrict access to only their business, enter business' financials and view analytics in regards to the business structure. The user dashboard allows users to see their last year's revenue, expenses, ebita and profit, as well as renders the majority of this information to charts and a table (in the form of an Income Statement). Finally, the app gives a couple of options for advice to the business owner, including a valuation range and what they would receive for an offer on the business. 
  
 ### Walk-through Video
@@ -23,20 +38,6 @@ https://www.youtube.com/watch?v=GYPZSd82-UE&t=1s
 * Bootstrap 4
 * Google Charts
 
-### Setup
-
-To run Main Street Valuations, install it locally by cloning this GitHub repository and run:
-```
-BE:
-bundle install
-rails db:migrate
-rails db:seed
-Open Rails on local host
-
-FE:
-Open index.html on lite-server
-
-```
 
 ### Code Examples
 
@@ -113,7 +114,7 @@ _Additional Options for Features_
 The COVID-19 pandemic has forced almost all businesses to take a real, hard, look at their finances. A family friend of ours, who owns 5280 Skin Care, was not excluded from businesses which were told their shut their doors for a prolonged period in the spring and summer of 2020. I hope this app can help her look at where money is coming in and out of to better provide for more financial stability. 
 
 ### Status
-App is fully functioning with option to grow with additional features. App is not currently deployed.
+App is fully functioning with option to grow with additional features. App is not currently deployed but is forthcoming.
 
 ### Contact
 Created by **[Elliott Stein](https://www.linkedin.com/in/steinelliott/)**
