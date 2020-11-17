@@ -23,7 +23,7 @@ Open index.html on lite-server
 ### General Info
 The app Main Street Valuations allows new users to enter their basic business information, authenticate users to restrict access to only their business, enter business' financials and view analytics in regards to the business structure. The user dashboard allows users to see their last year's revenue, expenses, ebita and profit, as well as renders the majority of this information to charts and a table (in the form of an Income Statement). Finally, the app gives a couple of options for advice to the business owner, including a valuation range and what they would receive for an offer on the business. 
  
-### Walk-through Video
+### Demo Video
 https://www.youtube.com/watch?v=GYPZSd82-UE&t=1s
 
 ### Technologies Used -
@@ -71,12 +71,7 @@ end
 Base structure for FE User Dashboard
 ```
 const ownerName = document.querySelector('#ownerName')
-const businessName = document.querySelector('#businessName')
-const expenses2019card = document.querySelector('#expense2019')
-const revenue2019card = document.querySelector('#revenue2019')
-const ebita2019card = document.querySelector(`#ebita2019`)
-const profit2019card = document.querySelector('#profit2019')
-
+...
 const baseURL = 'http://localhost:3000/'
 const profileURL = `${baseURL}/profile`
 
@@ -98,11 +93,15 @@ I relied on the following video for the HTML/CSS for the base structure of the u
 
 ### Features
 * First-time users for the app are only authenticated for the home page and new business form page. New users can enter their basic user information in a form, including creating a username and password.
+![Alt Text](https://media.giphy.com/media/QWBKr7MynQ1Dvy1YoR/giphy.gif)<br></br>
 * After creating a username and password, users can login and access their initial user profile page.
 * On the profile page, users can entire in their financials (mostly an income statement), and this automatically attaches to their business profile. Restrictions are built in to restrict users from altering other people's financials (or seeing other financials).
+![Alt Text](https://media.giphy.com/media/u4bgzBcbq6dCvCMFhZ/giphy.gif)<br></br>
 * Strong parameters are in-place on the backend to avoid users from submitting non-integers, and every value has to be submitted to avoid dividing by zero on some locations on the front-end.
 * Following submitting financials, users can view their dashboard, which has all sort of information in regards to their current business financial position. 
+![Alt Text](https://media.giphy.com/media/FJNH0HI91Ts9trOgsY/giphy.gif)<br></br>
 * Pop-up windows are placed on all the cards to display more information on business terms the user may or may not be familiar with.
+<iframe src="https://giphy.com/embed/HEOyigs40Y7S83hvCe" width="480" height="292" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/HEOyigs40Y7S83hvCe">via GIPHY</a></p>
 * A logout button is placed on the upper-right of the dashboard, which clears the user's auth token and directs them back to the home page.
 
 _Additional Options for Features_
