@@ -92,16 +92,16 @@ fetch(profileURL, {headers})
 I relied on the following video for the HTML/CSS for the base structure of the user dashboard: https://www.youtube.com/watch?v=XK-H0kQW54Y&list=TLPQMjcwOTIwMjAkxQ0LzeCAnw&index=1. The video provided a step-by-step instructional walk-through on how to create a user dashboard using Bootstrap 4. It was a great tutorial that allowed me to follow and code along while the instructor provided more clarity on Bootstrap grid structure. The video only provided instruction on the HTML and CSS and does not include any instructions on any of the JavaScript within the app.
 
 ### Features
-* First-time users for the app are only authenticated for the home page and new business form page. New users can enter their basic user information in a form, including creating a username and password.
+* First-time users for the app are only authenticated for the home page and new business form page. New users can enter their basic user information in a form, including creating a username and password.<br></br>
 ![Alt Text](https://media.giphy.com/media/QWBKr7MynQ1Dvy1YoR/giphy.gif)<br></br>
-* After creating a username and password, users can login and access their initial user profile page.
-* On the profile page, users can entire in their financials (mostly an income statement), and this automatically attaches to their business profile. Restrictions are built in to restrict users from altering other people's financials (or seeing other financials).
+* After creating a username and password, users can login and access their initial user profile page.<br></br>
+* On the profile page, users can entire in their financials (mostly an income statement), and this automatically attaches to their business profile. Restrictions are built in to restrict users from altering other people's financials (or seeing other financials).<br></br>
 ![Alt Text](https://media.giphy.com/media/u4bgzBcbq6dCvCMFhZ/giphy.gif)<br></br>
-* Strong parameters are in-place on the backend to avoid users from submitting non-integers, and every value has to be submitted to avoid dividing by zero on some locations on the front-end.
+* Strong parameters are in-place on the backend to avoid users from submitting non-integers, and every value has to be submitted to avoid dividing by zero on some locations on the front-end.<br></br>
 * Following submitting financials, users can view their dashboard, which has all sort of information in regards to their current business financial position. 
 ![Alt Text](https://media.giphy.com/media/FJNH0HI91Ts9trOgsY/giphy.gif)<br></br>
-* Pop-up windows are placed on all the cards to display more information on business terms the user may or may not be familiar with.
-<iframe src="https://giphy.com/embed/HEOyigs40Y7S83hvCe" width="480" height="292" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/HEOyigs40Y7S83hvCe">via GIPHY</a></p>
+* Pop-up windows are placed on all the cards to display more information on business terms the user may or may not be familiar with.<br></br>
+![Alt Text](https://media.giphy.com/media/HEOyigs40Y7S83hvCe/giphy.gif)<br></br>
 * A logout button is placed on the upper-right of the dashboard, which clears the user's auth token and directs them back to the home page.
 
 _Additional Options for Features_
