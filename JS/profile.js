@@ -14,7 +14,7 @@ fetch(profileURL, {headers})
     .then(response => response.json())
     .then(business => {
 
-        const welcomeMessage = document.createElement('h2')
+        const welcomeMessage = document.createElement('h4')
         welcomeMessage.textContent = `Welcome back ${business.first_name}`
         bannerText.append(welcomeMessage)
 

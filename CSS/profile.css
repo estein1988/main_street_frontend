@@ -11,17 +11,17 @@
 }
 
 #bannerText{
-    margin: 50px;
-    padding: 20px;
+    margin: 0px;
+    padding: 10px;
     font-size: 2.0em;
     color: whitesmoke;
     font-weight: bold;
 }
 
-#enter3years{
+#enterFinancials{
     margin: 0px;
     padding: 0px;
-    font-size: 1.5em;
+    font-size: 1.1em;
     color: whitesmoke;
     font-weight: bold;
 }
