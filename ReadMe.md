@@ -5,6 +5,9 @@ An interactive tool to better manage your small business revenue, expenses and p
 ## Backend Repo
 https://github.com/estein1988/main_street_backend
 
+### Demo Video
+https://www.youtube.com/watch?v=bZAjlKbOnCk
+
 ## Setup
 
 To run Main Street Valuations, install it locally by cloning this GitHub repository and run:
@@ -25,9 +28,24 @@ The app Main Street Valuations allows new users to enter their basic business in
 
 ### Inspiration
 The COVID-19 pandemic has forced almost all businesses to take a closer look at their finances. A family friend of ours, who owns 5280 Skin Care, was not excluded from businesses which were told their shut their doors for a prolonged period in the spring of 2020. I hope this app can help her look at where money is coming in and out to provide her with more financial stability and reduce the impacts of the pandemic.
- 
-### Demo Video
-https://www.youtube.com/watch?v=bZAjlKbOnCk
+
+### Features
+* First-time users for the app are only authenticated for the home page and new business form page. New users can enter their basic user information in a form, including creating a username and password.<br></br>
+![Alt Text](https://media.giphy.com/media/QWBKr7MynQ1Dvy1YoR/giphy.gif)<br></br>
+* After creating a username and password, users can login and access their initial user profile page.<br></br>
+* On the profile page, users can entire in their financials (mostly an income statement), and this automatically attaches to their business profile. Restrictions are built in to restrict users from altering other people's financials (or seeing other financials).<br></br>
+![Alt Text](https://media.giphy.com/media/u4bgzBcbq6dCvCMFhZ/giphy.gif)<br></br>
+* Strong parameters are in-place on the backend to avoid users from submitting non-integers, and every value has to be submitted to avoid dividing by zero on some locations on the front-end.<br></br>
+* Following submitting financials, users can view their dashboard, which has all sort of information in regards to their current business financial position.<br></br> 
+![Alt Text](https://media.giphy.com/media/FJNH0HI91Ts9trOgsY/giphy.gif)<br></br>
+* Pop-up windows are placed on all the cards to display more information on business terms the user may or may not be familiar with.<br></br>
+![Alt Text](https://media.giphy.com/media/HEOyigs40Y7S83hvCe/giphy.gif)<br></br>
+* A logout button is placed on the upper-right of the dashboard, which clears the user's auth token and directs them back to the home page.
+
+### Features for Future Development
+* Build in functionality for the financials class to be based on the company's industry. As of now, all financials are generic for small businesses. 
+* Additional logic to avoid rendering null values or blank charts to admin page. 
+* Deploy the app via Heroku and Firebase so external users can us its functionality.
 
 ### Technologies Used -
 * Ruby 2.6.1
@@ -40,7 +58,6 @@ https://www.youtube.com/watch?v=bZAjlKbOnCk
 * HTML5, CSS3, JavaScript
 * Bootstrap 4
 * Google Charts
-
 
 ### Code Examples
 
@@ -93,24 +110,6 @@ fetch(profileURL, {headers})
 
 ### Admin Dashboard Documentation
 I relied on the following video for the HTML/CSS for the base structure of the user dashboard: https://www.youtube.com/watch?v=XK-H0kQW54Y&list=TLPQMjcwOTIwMjAkxQ0LzeCAnw&index=1. The video provided a step-by-step instructional walk-through on how to create a user dashboard using Bootstrap 4. It was a great tutorial that allowed me to follow and code along while the instructor provided more clarity on Bootstrap grid structure. The video only provided instruction on the HTML and CSS and does not include any instructions on any of the JavaScript within the app.
-
-### Features
-* First-time users for the app are only authenticated for the home page and new business form page. New users can enter their basic user information in a form, including creating a username and password.<br></br>
-![Alt Text](https://media.giphy.com/media/QWBKr7MynQ1Dvy1YoR/giphy.gif)<br></br>
-* After creating a username and password, users can login and access their initial user profile page.<br></br>
-* On the profile page, users can entire in their financials (mostly an income statement), and this automatically attaches to their business profile. Restrictions are built in to restrict users from altering other people's financials (or seeing other financials).<br></br>
-![Alt Text](https://media.giphy.com/media/u4bgzBcbq6dCvCMFhZ/giphy.gif)<br></br>
-* Strong parameters are in-place on the backend to avoid users from submitting non-integers, and every value has to be submitted to avoid dividing by zero on some locations on the front-end.<br></br>
-* Following submitting financials, users can view their dashboard, which has all sort of information in regards to their current business financial position.<br></br> 
-![Alt Text](https://media.giphy.com/media/FJNH0HI91Ts9trOgsY/giphy.gif)<br></br>
-* Pop-up windows are placed on all the cards to display more information on business terms the user may or may not be familiar with.<br></br>
-![Alt Text](https://media.giphy.com/media/HEOyigs40Y7S83hvCe/giphy.gif)<br></br>
-* A logout button is placed on the upper-right of the dashboard, which clears the user's auth token and directs them back to the home page.
-
-### Features for Future Development
-* Build in functionality for the financials class to be based on the company's industry. As of now, all financials are generic for small businesses. 
-* Additional logic to avoid rendering null values or blank charts to admin page. 
-* Deploy the app via Heroku and Firebase so external users can us its functionality.
 
 ### Status
 The App is fully functioning with option to grow with additional features. App is not currently deployed but is forthcoming.
