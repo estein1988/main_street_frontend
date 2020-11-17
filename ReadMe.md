@@ -79,7 +79,7 @@ class AuthenticationController < ApplicationController
                 render json: { message: 'Bad password' }, status: :unauthorized
             else
                 payload = { business_id: @business.id }
-                secret = 'ill never tell. anyone.'
+                secret = ''
                 token = JWT.encode(payload, secret)
 
                 render json: { token: token }, status: :ok
