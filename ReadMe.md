@@ -51,9 +51,10 @@ The COVID-19 pandemic has forced almost all businesses to take a closer look at 
 * Ruby 2.6.1
 * Rails 6.0.3
 * Puma 4.1
-* Bcrypt
-* JWT
-* Rack-cors
+* PostgresDB
+* Heroku
+* Firebase Hosting
+* Bcrypt / JWT
 * HTML5, CSS3, JavaScript
 * Bootstrap 4
 * Google Charts
