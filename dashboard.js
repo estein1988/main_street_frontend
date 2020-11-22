@@ -5,7 +5,7 @@ const revenue2019card = document.querySelector('#revenue2019')
 const ebita2019card = document.querySelector(`#ebita2019`)
 const profit2019card = document.querySelector('#profit2019')
 
-const baseURL = 'http://localhost:3000/'
+const baseURL = 'https://main-street-valuations.herokuapp.com/'
 const profileURL = `${baseURL}/profile`
 
 const headers = {

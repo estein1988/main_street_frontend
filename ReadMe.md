@@ -50,7 +50,6 @@ The COVID-19 pandemic has forced almost all businesses to take a closer look at 
 ### Technologies Used -
 * Ruby 2.6.1
 * Rails 6.0.3
-* Sqlite3 1.4
 * Puma 4.1
 * Bcrypt
 * JWT
